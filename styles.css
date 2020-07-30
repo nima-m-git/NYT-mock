@@ -1,7 +1,393 @@
+CSS Reset
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1.5;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+b {
+    font-weight: bold;
+}
+
+
+/* Formatting */
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 20px 0;
+}
+
+p {
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.747);
+    margin: 10px 0;
+}
+
+small {
+    font-size: small;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.541);
+}
+
+img {
+    width: 100%;
+}
+
+.logo img{
+    width: 40%;
+}
+
+
+/* Header */
+.top-header {
+    width: 100%;
+    display: flex;
+    position: fixed;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.219);
+    background-color: white;
+}
+
+.top-header .logo {
+    flex: 4;
+    display: flex;
+    justify-content: center;
+}
+
+/* Main Article */
+.media-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    height: 50px;
+}
+
+.media-bar > * {
+    margin: 5px;
+}
+
+.media-bar .date {
+    width: 90%;
+    margin-left: 0;
+}
+
+.main-article h2 {
+    font-size: 36px;
+    font-style: italic;
+    font-weight: 700;
+}
+
+.main-article {
+    display: grid;
+    grid-template-columns: minmax(100px, 1fr) minmax(400px, 3fr) minmax(100px, 1fr);
+    /* grid-template-columns: 1fr 3fr 1fr; */
+    margin: 0 20px;
+    padding-top: 100px;
+}
+
+.main-article > * {
+    grid-column: 2 / 3;
+}
+
+img, figure {
+    max-width: 100%;
+}
+
+.iframe-caption, figcaption, .article-credit {
+    color: rgba(0, 0, 0, 0.637);
+}
+
+
+/* Inflation Snippet */
+.col-1-4 {
+    grid-column: 1 / -1;
+}
+
+.inflation-theory {
+    margin: 0 30px;
+}
+
+.inflation-theory h2 {
+    font-style: normal;
+    font-size: 24px;
+}
+
+.subtext {
+    font-size: 14px;
+}
+
 .snippets {
-    position: relative;
+    background-image: url(https://static01.nyt.com/newsgraphics/2014/03/18/theory-of-inflation/1ebaa1b972edda0f407fbaa0e010f6b50fb6792e/inflation-945.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 650px;
+    display: grid;
+    grid-template-columns: repeat(4, 265px);
+    /* minmax(173, 278) */
+    grid-template-rows: 320px 320px;
+    grid-auto-flow: column;
+    font-size: 14px;
 }
 
 .snippet {
-    position: absolute;
+    padding-top: 150px;
+    padding-left: 20px;
+    align-self: end;
 }
+
+.the-universe {
+    grid-column: 1 / 2;
+}
+
+.not-enough-time {
+    grid-column: 2 / 3;
+}
+
+.distant-coffee {
+    grid-column: 3 / 4;
+}
+
+.coffee-everywhere {
+    grid-column: 4 / 5;
+}
+
+.still-not-enough-time {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+
+.inflation {
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+.fluctuation {
+    grid-area: 2 / 3 / 3 / 4;
+}
+
+.expansion {
+    grid-area: 2 / 4 / 3 / 5;
+}
+
+.story-footer::before {
+    width: 60px;
+    content: '';
+    display: inline-block;
+    height: 1px;
+    margin: 0 0 13px;
+    background-color: #000;
+}
+
+/* Bottom */
+.bottom-container {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-areas: 
+        "morein   morein   morein   mostpop"
+        "morein   morein   morein   mostpop"
+        "editpick editpick editpick mostpop";
+}
+
+.more-articles {
+    grid-area: morein;
+    padding-bottom: 50px;
+    border-top: 1.5px solid black;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
+.content > * {
+    margin: 0;
+}
+
+.publisher {
+    font-size: 10px;
+    display: flex;
+    justify-content: right;
+    color: rgba(0, 0, 0, 0.350);
+}
+
+.title {
+    color: black;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.date {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.350);
+}
+
+.more-articles .articles, .editors-picks-bottom .articles{
+    display: grid;
+    gap: 10px;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr;
+}
+
+
+.editors-picks-bottom {
+    grid-area: editpick;
+    border-top: 1.5px solid black;
+}
+
+.most-popular {
+    grid-area: mostpop;
+    margin-left: 20px;
+    margin-right: 50px;
+    border-top: 1.5px solid black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 18px;
+    text-transform: capitalize;
+}
+
+.most-popular li::before {
+    width: 100%;
+    content: '';
+    display: inline-block;
+    height: 1px;
+    margin: 0 0 13px;
+    background-color: rgba(0, 0, 0, 0.219);
+}
+
+.sidebar {
+    grid-column: 3 / 4;
+}
+
+
+/* Footer */
+.footer {
+    grid-column: 1 / -1;
+}
+
+.vert-list {
+    display: grid;
+    grid-template-rows: repeat(6, 50px);
+}
+
+.vert-list > * {
+    align-self: center;
+    padding-bottom: 25px;
+    font-weight: 600;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgba(0, 0, 0, 0.801);
+}
+
+.vert-list > *::before {
+    width: 100%;
+    content: '';
+    display: inline-block;
+    height: 1px;
+    margin: 0 0 13px;
+    background-color: rgba(0, 0, 0, 0.219);
+}
+
+.vert-list:last-child {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.219);
+}
+
+
+.head{
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid rgba(0, 0, 0, 0.308);
+    align-items: center;
+}
+
+.footer {
+    margin-top: 20px;
+}
+
+.footer-bottom {
+    display: flex;
+    flex-direction: column;
+    color: rgba(0, 0, 0, 0.600);
+    padding-bottom: 20px;
+}
+
+.footer-bottom h4{
+    align-self: center;
+}
+
+.hor-list {
+    display: flex;
+    font-size: 14px;
+    justify-content: space-around;
+}
+
+
+
+
+
+/* <figure class='snippets' style='background-image: url(https://static01.nyt.com/newsgraphics/2014/03/18/theory-of-inflation/1ebaa1b972edda0f407fbaa0e010f6b50fb6792e/inflation-945.png)'>
+<div class='snippet' style='top:24.8264%; left:0.0436%; width:228px;'>
+    <strong>THE UNIVERSE</strong>  is just under 14 billion years old. From our position in the Milky Way galaxy, we can observe a sphere that is now about 92 billion light-years across. But there's a mystery. Wherever we look, the universe has an even temperature.
+</div>
+<div class='snippet' style='top:24.8264%; left:25.5619%; width:228px;'>
+    <strong>NOT ENOUGH TIME</strong>  The universe is not old enough for light to have traveled the vast distance from one side of the universe to the other, and there has not been enough time for scattered patches of hot and cold to mix into an even temperature.
+<div class='snippet' style='top:24.8264%; left:51.0800%; width:228px;'>
+    <strong>DISTANT COFFEE</strong>  At a smaller scale, imagine using a telescope to look a mile in one direction. You see a coffee cup, and from the amount of steam, you can estimate its temperature and how much it has cooled.
+<div class='snippet' style='top:24.8264%; left:76.5982%; width:228px;'>
+    <strong>COFFEE EVERYWHERE</strong>  Now turn around and look a mile in the other direction. You see a similar coffee cup, at exactly the same temperature. Coincidence? Maybe. But if you see a similar cup in every direction, you might want to look for another explanation.
+<div class='snippet' style='top:73.4375%; left:0.0436%; width:228px;'>
+    <strong>STILL NOT ENOUGH TIME</strong>  There has not been enough time to carry coffee cups from place to place before they get cold. But if all the coffee cups were somehow filled from a single coffee pot, all at the same time, that might explain their even temperature.                           
+<div class='snippet' style='top:73.4375%; left:25.5619%; width:228px;'>
+    <strong>INFLATION</strong>  solves this problem. The theory proposes that, less than a trillionth of a second after the Big Bang, the universe expanded faster than the speed of light. Tiny ripples in the violently expanding energy field eventually grew into the large-scale structures of the universe.                           
+<div class='snippet' style='top:73.4375%; left:51.0800%; width:228px;'>
+    <strong>FLUCTUATION</strong>  Astronomers have now detected evidence of these ancient fluctuations in swirls of polarized light in the cosmic background radiation, which is energy left over from the early universe. These are gravitational waves predicted by Einstein.
+<div class='snippet' style='top:73.4375%; left:76.5982%; width:228px;'>
+    <strong>EXPANSION</strong>  Returning to our coffee, imagine a single, central pot expanding faster than light and cooling to an even temperature as it expands. That is something like inflation. And the structure of the universe mirrors the froth and foam of the original pot.
+</div>
+<figcaption class='authors'>By LARRY BUCHANAN and JONATHAN CORUM</div>
+</figure> */
